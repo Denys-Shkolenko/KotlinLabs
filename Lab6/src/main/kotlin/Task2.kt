@@ -24,7 +24,11 @@ fun main() {
 }
 
 fun solveForX(evaluator: ExprEvaluator, equation: String): String {
-    // Solve the equation for x
-    val result = evaluator.eval("Solve[$equation, x]")
-    return result.toString()
+    val rawResult = evaluator.eval("Solve[$equation, x]").toString()
+    // Extract the solutions from the raw result
+    val solutions = rawResult.split(",").map {
+        it.split("->").last().trim(' ', '{', '}')
+    }
+    return solutions.joinToString(", ")
 }
+
