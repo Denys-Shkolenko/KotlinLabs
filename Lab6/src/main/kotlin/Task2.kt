@@ -8,7 +8,7 @@ fun main() {
     val equations = File("src/main/resources/EquationsTask2.txt").readLines()
 
     // Step 2: Read variables from the console
-    val variableNames = listOf("a", "b", "c", "d", "y")
+    val variableNames = listOf("a", "b", "c", "y")
     val variables = readVariables(variableNames)
 
     // Step 3: Set variables for evaluator
